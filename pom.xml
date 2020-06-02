@@ -16,6 +16,9 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+
+		<!-- Version for Manifest file -->
+		<build.version>${project.version}</build.version>
 	</properties>
 
 	<dependencies>
@@ -47,6 +50,25 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<!-- ================================ -->
+			<!-- Set version in MANIFEST.MF file  -->
+			<!-- ================================ -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Implementation-Version>${build.version}</Implementation-Version>
+							<Build-Time>${maven.build.timestamp}</Build-Time>
+						</manifestEntries>
+						<manifest>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+					</archive>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
