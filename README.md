@@ -38,7 +38,7 @@ Running the created image with
 docker run -d -p 8080:8080 spring-boot-jib-hello:1.2.3
 ```
 
-... should bring the text {{Hello from 1.2.3 2020-06-03T12:22:44Z}} when accessing http://localhost:8080/sayhello.
+... should bring the text `Hello from 1.2.3 2020-06-03T12:22:44Z` when accessing http://localhost:8080/sayhello.
 
 ### Reference Documentation
 For further reference, please consider the following sections:
